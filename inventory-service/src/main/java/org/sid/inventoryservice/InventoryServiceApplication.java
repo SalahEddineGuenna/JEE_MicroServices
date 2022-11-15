@@ -16,6 +16,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+
 @SpringBootApplication
 public class InventoryServiceApplication {
 
@@ -24,7 +26,8 @@ public class InventoryServiceApplication {
     }
 
     @Bean
-    CommandLineRunner start(ProductRepository productRepository) {
+    CommandLineRunner start(ProductRepository productRepository, RepositoryRestConfiguration restConfiguration){
+        restConfiguration.exposeIdsFor(Product.class);
         return args -> {
             productRepository.save(new Product(null, "Ordinateur", 788,12));
             productRepository.save(new Product(null, "Imprimante", 88,12));
