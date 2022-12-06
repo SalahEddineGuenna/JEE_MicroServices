@@ -8,7 +8,7 @@
         <version>2.7.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>org.sid</groupId>
+    <groupId>com.example</groupId>
     <artifactId>billing-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>billing-service</name>
