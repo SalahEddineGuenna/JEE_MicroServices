@@ -9,5 +9,5 @@ import java.util.Collection;
 
 @RepositoryRestResource
 public interface ProductitemRepository extends JpaRepository<Productitem, Long> {
-    public Collection<Productitem> findAllBy(Long id);
+    public Collection<Productitem> findByBillId(Long id);
 }
