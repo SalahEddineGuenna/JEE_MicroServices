@@ -8,8 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
-import java.sql.SQLOutput;
-
 @SpringBootApplication
 public class CustomerServiceApplication {
 
@@ -18,13 +16,13 @@ public class CustomerServiceApplication {
     }
 
     @Bean
-    CommandLineRunner start(CustomerRepository customerRepository, RepositoryRestConfiguration restConfiguration){
+    CommandLineRunner start(CustomerRepository customerRepository, RepositoryRestConfiguration restConfiguration) {
         restConfiguration.exposeIdsFor(Customer.class);
         return args -> {
-            customerRepository.save(new Customer(null, "Salah Eddine", "Salah@gmail.com"));
+            customerRepository.save(new Customer(null, "salah", "salah@gmail.com"));
+            customerRepository.save(new Customer(null, "Youssef", "Youssef@gmail.com"));
             customerRepository.save(new Customer(null, "Mouad", "Mouad@gmail.com"));
-            customerRepository.save(new Customer(null, "Chaimae", "Chaimae@gmail.com"));
-            customerRepository.findAll().forEach(c ->{
+            customerRepository.findAll().forEach(c -> {
                 System.out.println(c.toString());
             });
         };

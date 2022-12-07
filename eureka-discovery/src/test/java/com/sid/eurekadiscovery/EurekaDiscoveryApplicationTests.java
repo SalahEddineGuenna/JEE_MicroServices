@@ -1,10 +1,10 @@
-package org.sid.billingservice;
+package com.sid.eurekadiscovery;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BillingServiceApplicationTests {
+class EurekaDiscoveryApplicationTests {
 
     @Test
     void contextLoads() {
